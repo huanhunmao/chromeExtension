@@ -1,0 +1,39 @@
+{
+    "manifest_version": 3,
+    "name": "点击图标弹出通知扩展",
+    "version": "1.0",
+    "description": "一个简单的示例扩展，点击图标弹出通知。",
+    "permissions": [
+      "notifications"
+    ],
+    "background": {
+        "service_worker": "background.js"
+      },
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "img/icon.png",
+        "48": "img/icon.png",
+        "128": "img/icon.png"
+      }
+    },
+    "icons": {
+      "16": "img/icon.png",
+      "48": "img/icon.png",
+      "128": "img/icon.png"
+    },
+    "browser_action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+          "16": "img/icon.png",
+          "48": "img/icon.png"
+        }
+      },
+    "content_scripts": [
+        {
+          "matches": ["<all_urls>"],
+          "js": ["popup.js"]
+        }
+      ]
+  }
+  
